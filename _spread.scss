@@ -18,10 +18,10 @@
 
   #{$property}: #{$start-values};   // default values
 
-  $total-iterations: length($breakpoints); // Will loop through number of breakpoints
+  $total-iterations: length($im-breakpoints); // Will loop through number of breakpoints
   $iteration: 1;
   $change-values: change-values($start-values, $end-values);
-  @each $size, $breakpoint in $breakpoints {
+  @each $size, $breakpoint in $im-breakpoints {
     @if ( $iteration <= $total-iterations) {
       @include media(">=#{$breakpoint}") {
         #{$property}: adjust-values($iteration, $start-values, $change-values, $total-iterations, $ease);
